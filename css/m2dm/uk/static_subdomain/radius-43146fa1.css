@@ -338,8 +338,8 @@ template {
   margin-bottom: 5rem !important;
 }
 .u-pv-5x-large {
-  padding-top: 5rem !important;
-  padding-bottom: 5rem !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
 }
 @media only screen and (max-width: 639px) {
   .u-pv-5x-large {
@@ -2868,6 +2868,7 @@ sup {
 }
 .header__nav-item .header__nav-link:hover,
 .header__nav-link:hover,
+.header__nav-link.active,
 .header__secondary .header__nav-link:hover {
   color: #fc4e1e;
 }
