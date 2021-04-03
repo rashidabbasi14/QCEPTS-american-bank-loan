@@ -39,6 +39,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <!-- Start of LiveChat (www.livechatinc.com) code -->
   <script>
     window.__lc = window.__lc || {};
@@ -50,17 +55,52 @@
 </head>
 
 <body class="pg-businesses">
+     <a data-toggle="modal" data-target="#contactModal" class="apply-now-float">Apply Now</a>
+  <!-- Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <small class="text-center">For Immediate Assistance Please Call Now</small>
+            <br>
+            <h5 class="text-center"><b>3463269984</b></h5>
+          </div>
+          <br>
+          <form id="contact-us" action="form/contact-us.php" method="POST">
+            <div class="form-group">
+              <input type="text" name="name" class="form-control" placeholder="Enter Full Name" required>
+            </div>
+            <div class="form-group">
+              <input type="text" name="phone" class="form-control" placeholder="Enter Phone Number" minlength="10" required>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message"rows="5" placeholder="Your message here"></textarea>
+            </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <header class="header" data-js-header role="banner">
     <div class="header__upper">
       <div class="header__inner">
         <div class="header__navbar">
           <ul class="header__nav header__nav--controls">
             <li class="header__nav-item header__nav-item--comfortable">
-              <a href="tel:346 3269984">
+              <a href="tel:3463269984">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
                 </svg>
-                346 3269984
+                3463269984
               </a>
             </li>
           </ul>
@@ -73,10 +113,10 @@
           <div class="header__nav">
             <nav class="header__nav--scrollable u-valign-center" role="navigation">
               <a class="header__nav-link" href="index.html">Home</a> 
+              <a class="header__nav-link" href="about-us.html">About us</a>
               <a class="header__nav-link active" href="get-business-loan.html">Business Loan</a>
               <a class="header__nav-link" href="credit-line.html">Credit Line</a> 
               <a class="header__nav-link" href="loan-calculator.html">Loan Calculator</a> 
-              <a class="header__nav-link" href="about-us.html">About us</a>
             </nav>
             <div class="header__menu-icon"><button type="button" class="header__nav-link" data-js-overlay-open>
                 <div class="u-valign-center"><svg class="icon" width="16" height="16" viewbox="0 0 16 16"
@@ -128,7 +168,7 @@
               <div>
                 <div class="u-mb-small"><strong>Support</strong></div>
                 <ul class="header-overlay__list">
-                  <li><a class="header-overlay__list-link" href="contact-us.html">Contact us</a></li>
+                  <li><a class="header-overlay__list-link" data-toggle="modal" data-target="#contactModal">Contact us</a></li>
                 </ul>
               </div>
             </nav>
@@ -143,6 +183,7 @@
         <div class="hero__content u-color-white">
           <div class="text-block text-block--large u-mb-medium">
             <h1 class="brand-heading text-block__heading-bar--brand brand-heading--hero u-color-white">The Never Closing Door For You</h1>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#contactModal">Apply Now</button>
           </div>
         </div>
       </div>
@@ -279,7 +320,7 @@
             <div class="profile u-mb-medium">
               <div class="profile__picture"><img src="img/m2dm/uk/profile/static_subdomain/borrower-80c001c0.png" alt
                   loading></div>
-              <div class="profile__text"><a class="profile__text-heading" href="tel:346 3269984">346 3269984</a>
+              <div class="profile__text"><a class="profile__text-heading" href="tel:3463269984">3463269984</a>
                 <a href="mailto:contact@americansbusinessloan.com "><p class="profile__text-copy">contact@americansbusinessloan.com</p></a>
               </div>
             </div>
@@ -420,7 +461,7 @@
             <div class="profile u-mb-small">
               <div class="profile__picture"><img src="img/m2dm/uk/profile/static_subdomain/borrower-80c001c0.png" alt
                   loading="lazy"></div>
-              <div class="profile__text"><a class="profile__text-heading" href="tel:346 3269984">346 3269984</a>
+              <div class="profile__text"><a class="profile__text-heading" href="tel:3463269984">3463269984</a>
                 <p class="profile__text-copy">Need help? Call us.</p>
               </div>
             </div>
@@ -452,7 +493,7 @@
             <h3 class="footer__list-heading">Americans Business Loan</h3>
             <ul class="footer__list">
               <li><a href="about-us.html">About us</a></li>
-              <li><a href="contact-us.html">Contact us</a></li>
+              <li><a data-toggle="modal" data-target="#contactModal">Contact us</a></li>
             </ul>
           </div>
           <div>
@@ -477,8 +518,33 @@
     src="_incapsula_resource_swjiylwa_719d34d31c8e3a6e6fffd425f7e032f3_ns_1_cb_1024849282.js"></script>
   
 </body>
-
 </html>
+
+<script>
+  $("#contact-us").submit(function(e) {
+    e.preventDefault();
+    var form = $(this);
+    var url = form.attr('action');
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: form.serialize(),
+      success: function(response)
+      {
+          alert('Thank you, we will contact you as soon as possible');
+      }
+    });
+  });
+
+  $(document).scroll(function() {
+  var y = $(this).scrollTop();
+  if (y > 100) {
+    $('.apply-now-float').css('opacity',100);
+  } else {
+    $('.apply-now-float').css('opacity',0);
+  }
+});
+</script>
 
 <script>
   $('.cta-link').on('click',function(){

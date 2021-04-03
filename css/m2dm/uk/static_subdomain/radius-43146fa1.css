@@ -2528,9 +2528,12 @@ sup {
 }
 .footer__links a:active,
 .footer__links a:focus,
-.footer__links a:hover {
-  color: #fc4e1e;
+.footer__links a:hover,
+a[data-toggle]:hover {
+  color: #fc4e1e !important;
+  text-decoration: underline !important;
 }
+
 .footer__copy-legal,
 .footer__copyright {
   font-size: 0.8125rem;
@@ -2886,6 +2889,8 @@ sup {
 .header__nav-item a{
     text-decoration: none;
     color: white;
+    font-size: 30px;
+    margin: 15px;
 }
 .header__nav-item a svg{
   margin-right: 10px;
@@ -7049,5 +7054,33 @@ html[lang="de"] .quote__content::after {
 }
 
 .text-primary{
-  color: #fc4e1e;
+  color: #fc4e1e !important;
+}
+
+.btn-primary{
+  background-color: #75227d !important;
+  border: none !important;
+  outline: none !important;
+}
+
+a.apply-now-float{
+  border-radius: 4px;
+  height: min-content;
+  position: fixed;
+  right: -20px;
+  background-color: #75227d;
+  padding: 5px 10px;
+  top: 50%;
+  z-index: 9999;
+  transform: rotate(-90deg);
+  color: white !important;
+  transition: all .25s;
+  opacity: 0;
+}
+
+a.apply-now-float:hover{
+  color: white !important;
+  text-decoration: none !important;
+  transform: rotate(-90deg) scale(1.1);
+  cursor: pointer;
 }
