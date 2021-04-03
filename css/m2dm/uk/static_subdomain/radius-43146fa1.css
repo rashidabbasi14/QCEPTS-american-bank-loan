@@ -7035,3 +7035,8 @@ html[lang="de"] .quote__content::after {
 .u-inline-block {
   display: inline-block;
 }
+
+
+.cta-combo{
+  display: none !important;
+}
