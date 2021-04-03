@@ -2758,9 +2758,13 @@ sup {
 }
 .header {
   font-size: 0.8125rem;
-  position: relative;
+  /* position: relative; */
   z-index: 30;
   line-height: 1.5;
+
+  position: fixed;
+  width: 100%;
+  background-color: white;
 }
 .header__inner {
   width: 89.97092%;
@@ -7042,4 +7046,8 @@ html[lang="de"] .quote__content::after {
 
 .cta-combo{
   display: none !important;
+}
+
+.text-primary{
+  color: #fc4e1e;
 }
