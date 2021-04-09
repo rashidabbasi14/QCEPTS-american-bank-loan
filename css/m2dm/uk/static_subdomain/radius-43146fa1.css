@@ -2812,7 +2812,7 @@ a[data-toggle]:hover {
 }
 @media only screen and (min-width: 480px) {
   .header__upper {
-    min-height: 2rem;
+    min-height: 2.5rem;
     color: #c9cbd9;
     background-color: #262838;
   }
@@ -3261,7 +3261,7 @@ a[data-toggle]:hover {
 }
 .hero:not(.hero--editorial),
 .hero__background {
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -5971,6 +5971,8 @@ html[lang="de"] .quote__content::after {
   }
 }
 .hero--night-torch {
+  background-position: top !important;
+  padding-top: 100px;
   background-color: #424554;
   background-image: url(../../../../img/m2dm/uk/heroes/night-torch/static_subdomain/landscape-s-ab17f076.jpg);
 }

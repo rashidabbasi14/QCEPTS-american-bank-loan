@@ -1,34 +1,37 @@
-<?php
-    require 'vendor/autoload.php';
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
-    $mail = new PHPMailer(true);                            
-    if(!empty($_POST['name']) && !empty($_POST['phone'])){
-        try {
-            $mail->isSMTP();                                    
-            $mail->Host = 'business67.web-hosting.com';                
-            $mail->SMTPAuth = true;                             
-            $mail->Username = 'contact@americansbusinessloan.com';              
-            $mail->Password = 'americansbusinessloan@123';                         
-            $mail->SMTPSecure = 'ssl';                 
-            $mail->Port = 465;                                  
-    
-            //Recipients
-            $mail->setFrom('contact@americansbusinessloan.com', $_POST['name']);
-            $mail->addAddress('contact@americansbusinessloan.com', 'Get in touch');
-    
-            //Content
-            $mail->isHTML(true);
-            $mail->Subject = 'Contact Form Submission';
-    
-            $mail->Body    = 'Name: '.$_POST['name']
-            .'<br> Phone: '.$_POST['phone']
-            .'<br> Message: '.$_POST['message'];
-    
-            $mail->send();
-        } catch (Exception $e) {
-            echo 'Message could not be sent.';
-            echo 'Mailer Error: ' . $mail->ErrorInfo;
-        }
-    }
+<?php include 'db.php';
+
+function redirect($url, $statusCode = 303)
+{
+   header('Location: ' . $url, true, $statusCode);
+   die();
+}
+
+$sql = "CREATE TABLE IF NOT EXISTS contact_form (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    email VARCHAR(30),
+    phone VARCHAR(50) NOT NULL,
+    description VARCHAR(50),
+    website VARCHAR(255),
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
+
+if ($conn->query($sql) === FALSE) {
+    die("Couldn't create/find table: " . $conn->error);
+}
+
+$website = 'americansbusinessloan.com';
+$stmt = $conn->prepare("INSERT INTO contact_form (name, email, phone, description, website) VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param("sssss", $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['description'], $website);
+$stmt->execute();
+
+if($stmt->error){
+    http_response_code(400);
+    die($stmt->error);
+}else{
+    redirect('/thankyou.html');
+}
+
+$stmt->close();
+$conn->close();
 ?>

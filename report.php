@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-gb">
 
+<?php include 'form/db.php';
+  if(isset($_GET['date'])){
+    $date = explode(" - ",$_GET['date']);
+  }
+
+  $sql = "SELECT name, email, phone, description, date FROM contact_form WHERE website='americansbusinessloan.com'" . (isset($_GET['date']) ? ' AND date >= "'.  $date[0].' 00:00:00" AND date <= "'.  $date[1].' 23:59:59"' : '');
+  $result = $conn->query($sql);
+?>
+
 <head>
-  <title>Credit Line | Business Credit Line | Americans Business Loan</title>
+  <title>Reporting | Americans Business Loan</title>
   <meta charset="utf-8">
   <meta content="content-type">
+  <link rel="alternate" hreflang="en-US" href="index.html">
   <meta
-    content="Apply for the government Credit Line online and access business finance up to $10 million per business to help you manage the financial impact of coronavirus."
+    content="When Americans Business Loan was founded, businesses weren't given access to finance and investors were making poor returns. Read more about our story here."
     name="description">
   <meta
     content="Americans Business Loan, business loans, peer to peer lending, crowdfunding, social lending, peer to business lending, p2p lending"
@@ -33,6 +43,7 @@
   <meta name="msapplication-config"
     content="https://static.fundingcircle.com/img/global/favicons/browserconfig-fe5ef98f.xml">
   <meta name="theme-color" content="#75227d">
+  <link rel="canonical" href="https://www.fundingcircle.com/uk/about-us/">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -48,7 +59,7 @@
   <!-- End of LiveChat code -->
 </head>
 
-<body class="pg-businesses">
+<body class="pg-about-us">
      <a data-toggle="modal" data-target="#contactModal" class="apply-now-float">Apply Now</a>
   <!-- Modal -->
   <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
@@ -109,7 +120,7 @@
               <a class="header__nav-link" href="index.html">Home</a> 
               <a class="header__nav-link" href="about-us.html">About us</a>
               <a class="header__nav-link" href="get-business-loan.html">Business Loan</a>
-              <a class="header__nav-link active" href="credit-line.html">Credit Line</a> 
+              <a class="header__nav-link" href="credit-line.html">Credit Line</a> 
               <a class="header__nav-link" href="loan-calculator.html">Loan Calculator</a> 
             </nav>
             <div class="header__menu-icon"><button type="button" class="header__nav-link" data-js-overlay-open>
@@ -172,77 +183,49 @@
     </div>
   </header>
   <main data-role="wrap">
-    <section class="hero hero--bobbin-bicycles-2">
-      <div class="hero__inner">
-        <div class="hero__content u-color-white">
-          <div class="text-block text-block--large u-mb-medium">
-            <h1 class="brand-heading text-block__heading-bar--brand brand-heading--hero u-color-white">Accessibility to <br> Cash, on-demand</h1>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#contactModal">Apply Now</button>
-            <!-- <h2 class="text-block__lead-paragraph">Borrow up to $100k, pay interest only on the amount you use.</h2> -->
-          </div>
-          <!-- <div class="u-mb-medium"><a class="cta-primary" href="index.html">Get launch updates</a></div> -->
-        </div>
-      </div>
-    </section>
-    <section class="u-page-grid">
-      <div class="u-grid-141 u-pv-5x-large">
-        <div class="text-block text-block--large u-mb-medium">
-          <h2 class="section-heading section-heading--medium text-block__heading-bar--primary">What is Credit Line?</h2>
-          <p class="text-block__paragraph">If you’re planning to borrow money for your business but you’re not sure about the amount you need, Credit line is the best option you can go for.
-            Credit lines have higher credit limit, it is like a cash on demand service for your business. It gives you accessiblity and flexiblility. You will pay interest only when you borrow money.</p>
-          <p class="text-block__paragraph">Suppose you get a line of credit for $50,000 and you use 25,000 from it. You will only be taxed for the 25,000 and the rest of the credit is still available for you to use. After you return the borrowed amount, you get the full 50,000 in your credit line back.</p>
-          <h3 class="paragraph-heading paragraph-heading--large">How can a credit line help you?</h3>
-          <p>A credit line can help you in the follwing ways:</p>
-          <ul class="feature-list">
-            <li class="feature-list__item">Accessiblity to cash, on demand</li>
-            <li class="feature-list__item">You pay interest only for the amount you use</li>
-            <li class="feature-list__item">Boost your cashflows</li>
-          </ul>
-        </div>
-        <div class="u-pv-medium">
-          <hr class="divider">
-        </div>
-        <h6 class="label label--accent u-mb-small">Credit Line vs Business loan: What to choose?</h6>
-        <p>While borrowing money, taking the right decision is very essential. The following flow-chart is a complete guide for you if you’re not confident in choosing between a loan or a credit line.</p>
-      </div>
-      <div class="d-flex" style="display: flex; justify-content: center;">
-        <img src="img/credit-line.jpg" alt="">
-      </div>
-    </section>
-    <section class="page-closer page-closer--3-col u-theme-contrast">
-      <div class="page-closer__inner">
-        <div class="page-closer__grid">
-          <div class="page-closer__contact">
-            <div class="text-block text-block--small u-mb-small">
-              <h4 class="paragraph-heading paragraph-heading--medium">We&rsquo;re here to help</h4>
-              <p class="text-block__paragraph">Contact our team if you have any questions.</p>
-            </div>
-            <div class="profile u-mb-small">
-              <div class="profile__picture"><img src="img/m2dm/uk/profile/static_subdomain/borrower-80c001c0.png" alt
-                  loading="lazy"></div>
-              <div class="profile__text"><a class="profile__text-heading" href="tel:3463269984">3463269984</a>
-                <p class="profile__text-copy">Need help? Call us.</p>
-              </div>
-            </div>
-          </div>
-          <div class="page-closer__links">
-            <div class="page-closer__nav-suggestion">
-              <section class="text-block text-block--xsmall">
-                <h5 class="paragraph-heading paragraph-heading--small">Business Loans</h5>
-                <p class="text-block__paragraph">Get up to $500k loan with minimum interest rates, starting from 8.49%.</p>
-              </section><a class="cta-link page-closer__link--bottom" href="get-business-loan.html#sbl">Get a Business Loan</a>
-            </div>
-            <div class="page-closer__nav-suggestion">
-              <section class="text-block text-block--xsmall">
-                <h5 class="paragraph-heading paragraph-heading--small">Credit Line</h5>
-                <p class="text-block__paragraph">Get a fast and easy source of credit for up to $100k.</p>
-              </section><a class="cta-link page-closer__link--bottom"
-                href="credit-line.html">Learn more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+     <!-- ======= Hero Section ======= -->
+  <section style="padding-top: 200px; background-color:#59c8d0; min-height: 90vh;">
+    <div class="d-flex justify-content-center m-auto w-50">
+      <input class="date form-control mt-2 mb-2" id="date" placeholder="<?php echo (isset($_GET["date"]) ? $_GET['date'] : "Search by Date"); ?>" type="text" style="width: 300px">
+      <?php
+        if(isset($_GET['date'])){ ?>
+        <img cwidth=25 height=25 onclick="window.location.replace('report.php')" style="cursor:pointer; margin-left: 15px; margin-top: 15px;" src="assets/img/x.png" alt="">
+      <?php } ?>
+      <button class="btn btn-primary search">Search</button>
+    </div>
+    <div class="d-flex justify-content-center">
+      <?php echo $result->num_rows ?> results found
+    </div>
+    <div class="table-container table-responsive m-auto w-75">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+            
+            if ($result->num_rows > 0) {
+              while($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                  echo "<td>".$row['name']."</td>";
+                  echo "<td>".$row['email']."</td>";
+                  echo "<td>".$row['phone']."</td>";
+                  echo "<td>".$row['date']."</td>";
+                echo "</tr>";
+              }
+            } else {
+              echo "<td colspan=5>0 results</td>";
+            }
+          ?>
+        </tbody>
+      </table>
+    </div>
+  </section><!-- End Hero -->
   </main>
   <footer class="footer">
     <section class="footer__inner">
@@ -272,9 +255,18 @@
     </section>
   </footer>
   <script src="v2/polyfill.min.js"></script>
+  <script src="js/static_subdomain/scripts-aa8d12a3.js" defer></script>
+  <script src="js/static_subdomain/dynamic-values-145aa2e6.js" defer></script>
+  <script src="iframe_api.js"></script>
   <script src="js/static_subdomain/radius-m2dm-fe52cc1b.js" defer></script>
   <script async type="text/javascript"
-    src="_incapsula_resource_swjiylwa_719d34d31c8e3a6e6fffd425f7e032f3_ns_1_cb_469742738.js"></script>
+    src="_incapsula_resource_swjiylwa_719d34d31c8e3a6e6fffd425f7e032f3_ns_1_cb_2118249498.js"></script>
+
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   
 </body>
 </html>
@@ -297,11 +289,37 @@
   });
 
   $(document).scroll(function() {
-  var y = $(this).scrollTop();
-  if (y > 100) {
-    $('.apply-now-float').css('opacity',100);
-  } else {
-    $('.apply-now-float').css('opacity',0);
-  }
-});
+    var y = $(this).scrollTop();
+    if (y > 100) {
+      $('.apply-now-float').css('opacity',100);
+    } else {
+      $('.apply-now-float').css('opacity',0);
+    }
+  });
+
+  $(document).ready(function() {
+    var options = {
+      singleDatePicker: false,
+      showDropdowns: true,
+      showWeekNumbers: true,
+      showISOWeekNumbers: true,
+      timePicker24Hour: true,
+      ranges: {
+        'Today': [moment(), moment()],
+        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+        'This Month': [moment().startOf('month'), moment().endOf('month')],
+        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+      },
+      locale: {
+        format: 'YYYY-MM-DD'
+      }
+    };
+    $('.date').daterangepicker(options);
+  });
+
+  $('.search').on('click', function(){
+    window.location.replace('report.php?date='+$('#date').val());
+  });
 </script>
